@@ -1,0 +1,20 @@
+{
+  "name": "equipment-check-android",
+  "version": "2.0.0",
+  "private": true,
+  "description": "设备检查管理系统 · Android 原生打包工程（Capacitor 8）",
+  "scripts": {
+    "sync": "cap sync android",
+    "open": "cap open android",
+    "apk:debug": "cd android && gradlew assembleDebug",
+    "apk:release": "cd android && gradlew assembleRelease",
+    "aab:release": "cd android && gradlew bundleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.3"
+  }
+}

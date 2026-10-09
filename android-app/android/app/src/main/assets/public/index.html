@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#101828">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="设备检查">
+<meta name="format-detection" content="telephone=no">
+<title>设备检查管理系统</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<header class="app-bar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4.5" y="4" width="15" height="17" rx="2.4"/>
+        <path d="M9 3.2h6v2.6H9z" fill="currentColor" stroke="none"/>
+        <path d="M8.6 11.6l2.1 2.1 4.6-4.8"/>
+        <path d="M8.6 17.2h6.8"/>
+      </svg>
+    </span>
+    <div class="brand-txt">
+      <h1>设备检查</h1>
+      <div class="sub">EQUIPMENT INSPECTION · 季度检查档案</div>
+    </div>
+  </div>
+  <div class="bar-actions">
+    <button class="bar-btn" id="installBtn" hidden onclick="doInstall()">安装</button>
+    <button class="bar-btn" onclick="openPeriodPicker()" aria-label="切换检查期间">
+      <span class="bb-cap">期间</span>
+      <span class="bb-val" id="barPeriod">—</span>
+    </button>
+  </div>
+</header>
+
+<main id="view"></main>
+
+<nav class="tabbar" id="tabbar">
+  <button class="tb" data-view="check" onclick="switchView('check')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3.5" width="16" height="17.5" rx="2.5"/><path d="M8 9.5l2 2 4.2-4.4"/><path d="M8 15.4h8"/></svg>
+    <span>检查</span>
+  </button>
+  <button class="tb" data-view="library" onclick="switchView('library')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.2" y="4" width="17.6" height="4.4" rx="1.4"/><path d="M4.8 8.4V19a1.6 1.6 0 0 0 1.6 1.6h11.2a1.6 1.6 0 0 0 1.6-1.6V8.4"/><path d="M9.8 12.6h4.4"/></svg>
+    <span>文件库</span>
+  </button>
+  <button class="tb" data-view="settings" onclick="switchView('settings')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.2h10.6"/><circle cx="17.6" cy="7.2" r="2.4"/><path d="M20 16.8H9.4"/><circle cx="6.4" cy="16.8" r="2.4"/></svg>
+    <span>设置</span>
+  </button>
+</nav>
+
+<div id="sheetRoot"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

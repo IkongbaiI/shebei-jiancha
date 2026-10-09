@@ -1,0 +1,13 @@
+{
+	"appId": "com.company.equipcheck",
+	"appName": "设备检查",
+	"webDir": "www",
+	"server": {
+		"androidScheme": "https"
+	},
+	"android": {
+		"versionCode": 1,
+		"versionName": "2.0.0",
+		"allowMixedContent": false
+	}
+}
